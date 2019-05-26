@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#
+# 銀行コードを受け取り接尾辞を返す
+#
+# 不明または不要な場合は空文字を返す
+#
+
+# suffix = "銀行" ?
+is-ginko() {
+  curl -s "http://ykaku.com/ginkokensaku/htmlfile/$CODE/menu.html" |
+    nkf |
+    grep "銀行($CODE)" >/dev/null
+}
+
+CODE="$1"
+if is-ginko "$CODE"; then
+  echo "銀行"
+fi

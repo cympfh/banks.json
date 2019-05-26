@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+#
+# concat temp/banks.json and temp/banktype.list
+#
+
+require 'json'
+
+
+banks = JSON.load(File.open('temp/banks.json'))
+
+cx = 0
+File.open('temp/banktype.list').each_line {|line|
+  code, type = line.chomp.split(' ')
+  if banks[code]
+    banks[code]["type"] = type
+    banks[code]["suffix"] = `bash scripts/suffix #{code}`.chomp
+    cx += 1
+    STDERR.write "\r#{cx} / #{banks.size}"
+    sleep 5  # DONT ATTACK
+  else
+    STDERR.write "[!!] code #{code} (#{type}) not found in banks.json\n"
+  end
+}
+
+STDERR.write "\n"
+puts JSON.generate(banks)

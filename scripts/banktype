@@ -1,0 +1,37 @@
+#!/bin/bash
+
+get-codes() {
+    curl -s "$1" | grep -oE '/textfile/[0-9]{4,4}' |
+        grep -o '[0-9]*' |
+        sort | uniq
+}
+
+# 銀行
+get-codes http://ykaku.com/ginkokensaku/htmlfile/ginko/allcode.html |
+    sed 's/$/ ginko/'
+
+# 信用金庫
+get-codes http://ykaku.com/ginkokensaku/htmlfile/sinkin/allcode.html |
+    sed 's/$/ sinkin/'
+
+# 信用組合
+get-codes http://ykaku.com/ginkokensaku/htmlfile/sinkumi/allcode.html |
+    sed 's/$/ sinkumi/'
+
+# 労働金庫
+get-codes http://ykaku.com/ginkokensaku/htmlfile/rokin/allcode.html |
+    sed 's/$/ rokin/g'
+
+# 農協
+get-codes http://ykaku.com/ginkokensaku/htmlfile/nokyo/allcode.html |
+    sed 's/$/ nokyo/'
+
+# 漁協
+get-codes http://ykaku.com/ginkokensaku/htmlfile/gyokyo/allcode.html |
+    sed 's/$/ gyokyo/'
+
+# 商工中金
+echo "2004 shoko"
+
+# ゆうちょ
+echo "9900 yucho"
