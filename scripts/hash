@@ -1,0 +1,48 @@
+#!/bin/bash
+#
+# ./scripts/hash check
+#   check whether any update needs
+#   exit with 0 iff needs
+#
+# ./scripts/hash update
+#    replace the hashfile
+#
+
+FILES="temp/banks.json temp/banktype.list"
+HASHFILE=./hash
+
+hash() {
+    if which md5sum >/dev/null; then
+        md5sum | grep -o '[0-9a-f]*'
+    elif which md5 >/dev/null; then
+        md5 | grep -o '[0-9a-f]*'
+    else
+        exit 2
+    fi
+}
+
+make-hash() {
+    cat $FILES | hash
+}
+
+check() {
+    # file exists?
+    for f in $FILES $HASHFILE; do
+        if [ ! -f "$f" ]; then
+            exit 0
+        fi
+    done
+    # hash check
+    if [ $(make-hash) == $(cat "$HASHFILE") ]; then
+        echo "No update" >&2
+        exit 1
+    else
+        exit 0
+    fi
+}
+
+update() {
+    make-hash > $HASHFILE
+}
+
+$1
