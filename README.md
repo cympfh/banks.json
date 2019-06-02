@@ -4,6 +4,7 @@ Banks in Japan
 ## Data source
 
 - [銀行コード検索](http://ykaku.com/ginkokensaku/index.php)
+- [ギンコード.com](https://gincode.com/)
 - [github:zengin-code/source-data](https://github.com/zengin-code/source-data)
 
 ## What is different from zengin-code?

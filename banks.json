@@ -852,7 +852,7 @@
     "hira": "していばんく",
     "roma": "shiteibanku",
     "type": "ginko",
-    "suffix": "銀行"
+    "suffix": ""
   },
   "0402": {
     "code": "0402",
@@ -951,7 +951,7 @@
     "hira": "ばんくねがらいんどねしあ",
     "roma": "bankunegaraindoneshia",
     "type": "ginko",
-    "suffix": "銀行"
+    "suffix": ""
   },
   "0430": {
     "code": "0430",
@@ -1113,7 +1113,7 @@
     "hira": "あいえぬじ－　ばんく　えぬ",
     "roma": "aienuji-　banku　enu",
     "type": "ginko",
-    "suffix": "銀行"
+    "suffix": ""
   },
   "0484": {
     "code": "0484",
@@ -1122,7 +1122,7 @@
     "hira": "なしよなる．お－すとらりあ．は",
     "roma": "nashiyonaru.o-sutoraria.ha",
     "type": "ginko",
-    "suffix": "銀行"
+    "suffix": ""
   },
   "0485": {
     "code": "0485",
@@ -1590,7 +1590,7 @@
     "hira": "ふいりぴん．なしよなる",
     "roma": "fuiripin.nashiyonaru",
     "type": "ginko",
-    "suffix": "銀行"
+    "suffix": ""
   },
   "0619": {
     "code": "0619",
@@ -1635,7 +1635,7 @@
     "hira": "ちゆうごくけんせつ",
     "roma": "chiyuugokukensetsu",
     "type": "ginko",
-    "suffix": ""
+    "suffix": "銀行"
   },
   "0626": {
     "code": "0626",
@@ -1644,7 +1644,7 @@
     "hira": "いたう．うにばんこ",
     "roma": "itau.unibanko",
     "type": "ginko",
-    "suffix": ""
+    "suffix": "銀行"
   },
   "0627": {
     "code": "0627",
@@ -1653,7 +1653,7 @@
     "hira": "びるばお．びすかや．ある",
     "roma": "birubao.bisukaya.aru",
     "type": "ginko",
-    "suffix": ""
+    "suffix": "銀行"
   },
   "0630": {
     "code": "0630",
@@ -1662,7 +1662,7 @@
     "hira": "ちゆうごくのうぎよう",
     "roma": "chiyuugokunougiyou",
     "type": "ginko",
-    "suffix": ""
+    "suffix": "銀行"
   },
   "0631": {
     "code": "0631",
@@ -1671,7 +1671,7 @@
     "hira": "たいしんこくさいしようぎよう",
     "roma": "taishinkokusaishiyougiyou",
     "type": "ginko",
-    "suffix": ""
+    "suffix": "銀行"
   },
   "0632": {
     "code": "0632",
@@ -1680,7 +1680,7 @@
     "hira": "いいさん",
     "roma": "iisan",
     "type": "ginko",
-    "suffix": ""
+    "suffix": "銀行"
   },
   "0633": {
     "code": "0633",
@@ -1689,7 +1689,7 @@
     "hira": "たいわんちゆうしようきぎよう",
     "roma": "taiwanchiyuushiyoukigiyou",
     "type": "ginko",
-    "suffix": ""
+    "suffix": "銀行"
   },
   "1000": {
     "code": "1000",
@@ -11634,6 +11634,6 @@
     "hira": "ゆうちよ",
     "roma": "yuuchiyo",
     "type": "yucho",
-    "suffix": "銀行"
+    "suffix": ""
   }
 }

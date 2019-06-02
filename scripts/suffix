@@ -1,19 +1,34 @@
 #!/bin/bash
 
-#
-# 銀行コードを受け取り接尾辞を返す
-#
-# 不明または不要な場合は空文字を返す
-#
-
-# suffix = "銀行" ?
 is-ginko() {
-  curl -s "http://ykaku.com/ginkokensaku/htmlfile/$CODE/menu.html" |
-    nkf |
-    grep "銀行($CODE)" >/dev/null
+    code=$1
+    sleep 1
+    curl -s "https://gincode.com/bank_$code" |
+        nkf | grep '<title' | grep "銀行($code)" >/dev/null
 }
 
-CODE="$1"
-if is-ginko "$CODE"; then
-  echo "銀行"
-fi
+suffix() {
+    code=$1
+    type=$2
+    if [ "$type" = "ginko" ]; then
+        if is-ginko "$code"; then
+            echo "銀行"
+        else
+            :
+        fi
+    else
+        :
+    fi
+}
+
+FILE=temp/banktype.list
+NUM=$(cat $FILE | wc -l)
+I=0
+
+cat $FILE |
+    while read code type; do
+        echo "{\"$code\": \"$(suffix $code $type)\"}"
+        I=$((I + 1))
+        printf "\r${I} / ${NUM}" >&2
+    done |
+    jq -M -s '. | add'
