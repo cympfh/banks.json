@@ -16,6 +16,8 @@ suffix() {
         else
             :
         fi
+    elif [ "$type" = "yucho" ]; then
+        echo "銀行"
     else
         :
     fi
